@@ -1,0 +1,58 @@
+
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2')
+    }
+
+    maven {
+        url = uri('https://jcenter.bintray.com/')
+    }
+}
+
+javadoc {
+    options.addStringOption('Xdoclint:none', '-quiet')
+}
+
+dependencies {
+//    implementation 'org.openjfx:javafx-base:15'
+//    implementation 'org.openjfx:javafx-controls:15'
+//    implementation 'org.openjfx:javafx-fxml:15'
+//    implementation 'org.openjfx:javafx-graphics:15'
+//    implementation 'org.openjfx:javafx-media:15'
+//    implementation 'org.openjfx:javafx-swing:15'
+//    implementation 'org.openjfx:javafx-web:15'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.0'
+    testImplementation 'org.junit.platform:junit-platform-commons:1.7.0'
+    testImplementation 'net.jqwik:jqwik:1.3.5'
+}
+
+group = 'fi.utu.tech'
+version = '1.0.0'
+description = 'Example code for testing'
+sourceCompatibility = '11'
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
