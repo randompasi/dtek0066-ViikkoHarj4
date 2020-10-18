@@ -1,7 +1,7 @@
 package Assignment3;
 
-class Henkilö {
-    public Henkilö(String nimi, Integer ikä) {
+class HenkilöA implements HenkilöInterface {
+    public HenkilöA(String nimi, Integer ikä) {
         this.nimi = nimi;
         this.ikä = ikä;
     }
