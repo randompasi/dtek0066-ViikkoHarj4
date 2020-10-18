@@ -25,7 +25,8 @@ static List<Sign> luoKyltit(){
     signs.add(new Sign(new Dimension(6, 16), new Filling("-"), "First Sign"));
     signs.add(new Sign("Second Sign", true));
     signs.add(new Sign("Third Sign",false));
-
+    Sign a = new Sign("aaa", true);
+    //a.ha
     return signs;
 
 }
